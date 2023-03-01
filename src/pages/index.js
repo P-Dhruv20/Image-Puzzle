@@ -28,8 +28,12 @@ export default function Home() {
           <input
             type="file"
             onChange={(e) => {
-              if (e.target.files[0])
+              if (e.target.files[0] && e.target.files[0].type.includes("image"))
                 setImage(URL.createObjectURL(e.target.files[0]));
+                else toast.error("Please select an image file", {
+                  delay: 1000,
+                  position: "bottom-center",
+                });
             }}
           />
         </button>
