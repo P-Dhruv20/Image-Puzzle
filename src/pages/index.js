@@ -30,7 +30,8 @@ export default function Home() {
             onChange={(e) => {
               if (e.target.files[0] && e.target.files[0].type.includes("image"))
                 setImage(URL.createObjectURL(e.target.files[0]));
-                else toast.error("Please select an image file", {
+              else
+                toast.error("Please select an image file", {
                   delay: 1000,
                   position: "bottom-center",
                 });
